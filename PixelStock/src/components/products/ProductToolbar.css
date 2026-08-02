@@ -1,0 +1,21 @@
+.toolbar {
+  display: flex;
+  gap: 0.625rem;
+  margin-bottom: 1.125rem;
+  flex-wrap: wrap;
+}
+
+.search-box input,
+.filter-box select {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  color: var(--foreground);
+}
+
+.search-box input {
+  width: 260px;
+  max-width: 100%;
+}
+

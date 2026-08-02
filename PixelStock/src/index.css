@@ -21,6 +21,7 @@
   --max-width: 1440px;
   --font-sans: 'Rajdhani', sans-serif;
   --font-pixel: 'Press Start 2P', monospace;
+  --fw-bold: 700;
 }
 
 html {
@@ -38,7 +39,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container{
+.layout{
+  min-height: 100vh;
+  padding-left: 250px;
+}
+
+.container{  
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.5rem;
@@ -88,7 +94,7 @@ input::placeholder {
   color: var(--text-nav);
 }
 
-input:focus {
+input:focus, select:focus, textarea:focus {
   outline: 2px solid var(--accent);
 }
 
