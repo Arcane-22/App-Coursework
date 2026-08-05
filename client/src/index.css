@@ -37,6 +37,18 @@ body {
   font-weight: 400;
   font-size: clamp(1rem, calc(0.9643rem + 0.17857vw), 1.125rem);
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  background: repeating-linear-gradient(
+    rgba(255, 255, 255, 0.05), transparent 2px
+  );
 }
 
 .layout{
@@ -115,3 +127,6 @@ button {
   transition: background-color 0.15s ease;
 }
 
+@media (max-width: 768px) {
+
+}
