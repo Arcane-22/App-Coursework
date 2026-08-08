@@ -1,6 +1,7 @@
 import './Suppliers.css';
 import SuppliersTable from '../../components/suppliers/SupplierTable';
 import { suppliers } from '../../constants/mockData';
+import { Link } from 'react-router-dom';
 
 const Suppliers = () => {
   return (
@@ -10,7 +11,7 @@ const Suppliers = () => {
           <h1>Suppliers</h1>
           <p>Distributors you order stock from.</p>
         </div>
-        <button className="btn-primary" type="button">+ Add supplier</button>
+        <Link to="/suppliers/new" className="btn-primary">+ Add supplier</Link>
       </header>
       <SuppliersTable suppliers={suppliers} />
     </section>

@@ -1,0 +1,16 @@
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--text-nav);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.back-link:hover {
+  color: var(--foreground);
+}
+
+.page-header {
+  margin-bottom: 1rem;
+}

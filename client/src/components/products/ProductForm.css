@@ -1,0 +1,56 @@
+.product-form {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.field label {
+  font-size: 0.875rem;
+  font-weight: var(--fw-bold);
+  color: var(--text-nav);
+}
+
+.field-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.field-row .field {
+  flex: 1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 0.5rem;
+}
+
+.upload-box {
+  display: inline-block;
+  border: 1.5px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  color: var(--text-nav);
+  cursor: pointer;
+}
+
+.upload-box:hover {
+  border-color: var(--accent);
+  color: var(--foreground);
+}
+
+.hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

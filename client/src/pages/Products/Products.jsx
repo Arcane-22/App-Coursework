@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import StatCard from '../../components/ui/StatCard';
 import ProductToolbar from '../../components/products/ProductToolbar';
 import ProductTable from '../../components/products/ProductTable';
@@ -28,7 +29,7 @@ const filteredProducts = products
           <h1>Products</h1>
           <p>Games, consoles &amp; gear currently on the shelf.</p>
         </div>
-        <button className="btn-primary" type="button">+ Add product</button>
+        <Link to="/products/new" className="btn-primary">+ Add product</Link>
       </header>
 
       <ul className="stats-row">
