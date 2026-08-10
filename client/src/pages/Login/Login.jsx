@@ -3,15 +3,39 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login submitted");
-    navigate("/");
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Login failed");
+        setLoading(false);
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("fullName", data.fullName);
+      navigate("/products");
+    } catch (err) {
+      setError("Could not connect to server");
+      setLoading(false);
+    }
   };
 
   return (
@@ -46,6 +70,8 @@ const Login = () => {
           &gt; awaiting credentials<span className="dash">_</span>
         </div>
 
+        {error && <p className="login-error" role="alert">{error}</p>}
+
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
           <input
@@ -69,7 +95,9 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button type="submit" className="login-btn">Press Start</button>
+          <button type="submit" className="login-btn" disabled={loading}>
+            {loading ? "Signing in…" : "Press Start"}
+          </button>
         </form>
       </section>
     </div>

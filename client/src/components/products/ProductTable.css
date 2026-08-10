@@ -29,3 +29,12 @@
 .table tbody tr:last-child td {
   border-bottom: none;
 }
+
+.table tbody tr:hover {
+  background: var(--background);
+  cursor: default;
+}
+
+.table tbody tr:hover .product-cell {
+  cursor: pointer;
+}

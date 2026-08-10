@@ -39,7 +39,7 @@ const Sidebar = () => {
       <nav className="nav">
         <ul className="nav-list">
           <li>
-            <NavLink to="/">Products</NavLink>
+            <NavLink to="/products">Products</NavLink>
           </li>
           <li>
             <NavLink to="/suppliers">Suppliers</NavLink>
@@ -48,7 +48,7 @@ const Sidebar = () => {
       </nav>
 
       <footer className="sidebar-footer">
-        <Link to="/login">Log out</Link>
+        <Link to="/">Log out</Link>
       </footer>
     </aside>
   );

@@ -41,6 +41,12 @@
   animation: dash 1s step-start infinite;
 }
 
+.login-error {
+  color: var(--alert);
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+}
+
 @keyframes dash {
   50% { opacity: 0; }
 }
