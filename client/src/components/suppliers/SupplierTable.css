@@ -1,0 +1,5 @@
+.table tbody tr:hover {
+  background: var(--background);
+  cursor: pointer;
+  border-left: 4px solid var(--accent);
+}

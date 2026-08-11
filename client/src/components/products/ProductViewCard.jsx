@@ -9,7 +9,7 @@ const ProductViewCard = ({ product, supplier, onEdit, onDelete }) => {
       <div className="view-grid">
         <figure className="view-image">
           {product.image ? (
-            <img src={product.image} alt={product.name} />
+            <img src={`http://localhost:3000${product.image}`} alt={product.name} />
           ) : (
             <span className="view-image-placeholder">📦</span>
           )}
@@ -32,7 +32,7 @@ const ProductViewCard = ({ product, supplier, onEdit, onDelete }) => {
           <dl className="view-stats">
             <div>
               <dt className="stat-label">Price</dt>
-              <dd className="stat-value">${product.price.toFixed(2)}</dd>
+              <dd className="stat-value">${Number(product.price).toFixed(2)}</dd>
             </div>
             <div>
               <dt className="stat-label">In stock</dt>

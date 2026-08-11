@@ -1,0 +1,30 @@
+.supplier-row {
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid #211f33;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-left-color 0.15s ease;
+}
+
+.supplier-row:last-child {
+  border-bottom: none;
+}
+
+.supplier-row:hover {
+  background-color: #1b1830;
+  border-left-color: #7c5cff;
+}
+
+.supplier-row td {
+  padding: 1.1rem 1.5rem;
+  font-size: 0.92rem;
+  color: #e4e2f1;
+}
+
+.supplier-row td:first-child {
+  font-weight: 500;
+}
+
+.supplier-row td:nth-child(2),
+.supplier-row td:nth-child(3) {
+  color: #a9a6c4;
+}

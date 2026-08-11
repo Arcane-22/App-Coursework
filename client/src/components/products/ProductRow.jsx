@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
+import { LOW_STOCK_THRESHOLD } from "../../constants/productStats";
 import "./ProductRow.css";
-
-const LOW_STOCK_THRESHOLD = 5;
 
 const ProductRow = ({ product }) => {
   const { id, name, supplierName, price, quantity } = product;

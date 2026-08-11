@@ -33,6 +33,7 @@
 .table tbody tr:hover {
   background: var(--background);
   cursor: default;
+  border-left: 4px solid var(--accent);
 }
 
 .table tbody tr:hover .product-cell {

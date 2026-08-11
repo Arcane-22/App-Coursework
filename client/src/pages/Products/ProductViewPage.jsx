@@ -1,13 +1,30 @@
+import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import ProductViewCard from "../../components/products/ProductViewCard";
-import { products, suppliers } from "../../constants/mockData";
+import { getProduct, deleteProduct } from "../../services/api";
 
 const ProductViewPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [product, setProduct] = useState(null);
+  const [notFound, setNotFound] = useState(false);
 
-  const product = products.find((p) => String(p.id) === id);
-  const supplier = product ? suppliers.find((s) => s.id === product.supplierId) : null;
+  useEffect(() => {
+    getProduct(id)
+      .then(setProduct)
+      .catch(() => setNotFound(true));
+  }, [id]);
+
+  const handleDelete = async () => {
+    if (!window.confirm("Delete this product?")) return;
+
+    try {
+      await deleteProduct(id);
+      navigate("/products");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <main>
@@ -15,15 +32,17 @@ const ProductViewPage = () => {
         <Link to="/products" className="back-link">← Back to products</Link>
       </nav>
 
-      {product ? (
+      {notFound ? (
+        <p role="alert">Product not found.</p>
+      ) : product ? (
         <ProductViewCard
           product={product}
-          supplier={supplier}
+          supplier={product.Supplier}
           onEdit={() => navigate(`/products/${product.id}/edit`)}
-          onDelete={() => console.log("delete", product.id)}
+          onDelete={handleDelete}
         />
       ) : (
-        <p role="alert">Product not found.</p>
+        <p>Loading…</p>
       )}
     </main>
   );
