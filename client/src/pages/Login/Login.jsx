@@ -1,7 +1,7 @@
 import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BASE_URL from "../api";
+import BASE_URL from "../../services/api.js";
 
 const Login = () => {
   const [username, setUsername] = useState("");
