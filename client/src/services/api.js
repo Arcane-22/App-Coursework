@@ -2,8 +2,6 @@ const BASE_URL = import.meta.env.DEV
   ? import.meta.env.VITE_API_BASE_DEV
   : import.meta.env.VITE_API_BASE_PROD;
 
-  export default BASE_URL;
-
 function getToken() {
   return localStorage.getItem("token");
 }
@@ -77,3 +75,5 @@ export function updateSupplier(id, data) {
 export function deleteSupplier(id) {
   return request(`/suppliers/${id}`, { method: "DELETE" });
 }
+
+export default BASE_URL;

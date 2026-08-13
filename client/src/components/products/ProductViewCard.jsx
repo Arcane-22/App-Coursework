@@ -1,4 +1,5 @@
 import "./ProductViewCard.css";
+import BASE_URL from "../../services/api.js";
 
 const conditionLabels = { new: "New", used: "Used", refurb: "Refurbished" };
 const conditionClass = { new: "cond-new", used: "cond-used", refurb: "cond-refurb" };
@@ -9,7 +10,7 @@ const ProductViewCard = ({ product, supplier, onEdit, onDelete }) => {
       <div className="view-grid">
         <figure className="view-image">
           {product.image ? (
-            <img src={`http://localhost:3000${product.image}`} alt={product.name} />
+            <img src={`${BASE_URL}${product.image}`} alt={product.name} />
           ) : (
             <span className="view-image-placeholder">📦</span>
           )}
