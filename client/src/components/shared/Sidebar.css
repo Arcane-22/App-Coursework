@@ -117,3 +117,10 @@
 .sidebar-footer a:hover {
   color: var(--foreground);
 }
+
+.nav-list a,
+.sidebar-footer a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}

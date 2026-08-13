@@ -1,4 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { LOW_STOCK_THRESHOLD } from "../../constants/productStats";
+import { getProducts } from "../../services/api.js";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -12,8 +15,9 @@ const Sidebar = () => {
         const pct = Math.round(100 - (lowStockCount / products.length) * 100);
         setHealthPct(pct);
       })
-      .catch(() => {}); // fail silently, keep default 100%
+      .catch(() => {});
   }, []);
+  
   return (
     <aside className="sidebar">
       <header className="logo">
