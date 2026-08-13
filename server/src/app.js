@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Serve uploaded images
 app.use(
-  "/uploads",
+  "/api/uploads",
   express.static(path.join(process.cwd(), "uploads")),
 );
 
